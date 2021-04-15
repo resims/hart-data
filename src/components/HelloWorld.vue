@@ -17,10 +17,10 @@
         <td>{{ property.address }}</td>
         <td>{{ property.apt }}</td>
         <td>{{ property.yr_built }}</td>
-        <td>{{ property.long }}</td>
+        <td>{{ property.longitude }}</td>
         <td>{{ property.lat }}</td>
         <td>{{ property.nbhd }}</td>
-        <td>{{ property.block }}</td>
+        <td>{{ property.pblock }}</td>
         <td>{{ property.lot }}</td>
         <td>{{ property.bldg_cls_p }}</td>
         <td>{{ property.tax_cls_p }}</td>
