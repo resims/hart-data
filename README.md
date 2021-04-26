@@ -14,7 +14,7 @@ npm run serve
 ```
 npm run build
 ```
-In order to deploy to the webserver, su -c "cp -r /dist/* /var/www/html
+In order to deploy to the webserver, su -c "cp -r /dist/* /var/www/html"
 
 ### Lints and fixes files
 ```
