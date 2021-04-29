@@ -356,9 +356,18 @@ export default {
             if(response.data.previous !== null){
               this.prev=response.data.previous.split("?")[1]
             }
-            this.start=1+this.properties.length*parseInt(this.prev.split("=")[1])
-            this.end=1+this.properties.length*(parseInt(this.prev.split("=")[1])+1)
-            console.log(this.start, this.end, "here")
+            if(response.data.previous == null && response.data.next !== null){
+              this.start=1
+              this.end = 10
+            }
+            if(response.data.previous.split("?")[1] == null){
+              this.start = 11
+              this.end = 20
+            }
+            else{
+              this.start=1+this.properties.length*parseInt(this.prev.split("=")[1])
+              this.end = this.start+9
+            }
         })
         console.log(this.nxt)
     },
@@ -410,7 +419,7 @@ export default {
     insertProperty: function(){
       let url = 'properties/'
 
-      console.log("insertProperty clicked!", this.newbbl_id)      
+      console.log("insertProperty clicked!")      
 
       axios.post(url,{
         bbl_id: this.newbbl_id,
@@ -424,6 +433,18 @@ export default {
         lot: this.newLot,
         bldg_cls_p: this.newBldgCls,
         tax_cls_p: this.newTaxCls}).then((response)=> {console.log(response);});
+
+        this.newbbl_id = null
+        this.newAddress = null
+        this.newApt = null
+        this.newYearBuilt = null
+        this.newLong = null
+        this.newLat = null
+        this.newNbhd = null
+        this.newBlock = null
+        this.newLot = null
+        this.newBldgCls = null
+        this.newTaxCls = null
     }
   }
 }
