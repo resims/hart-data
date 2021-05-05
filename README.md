@@ -14,8 +14,14 @@ npm run serve
 ```
 npm run build
 ```
-In order to deploy to the webserver, su -c "cp -r /dist/* /var/www/html"
-
+In order to deploy to the webserver, perform these commands on the webserver, from whatever directory you want.
+```
+git clone git@github.com:{user}/hart-data-Vue.git
+cd hart-data-Vue
+npm install
+npm run build
+su -c "cp -r /dist/* /var/www/html"
+```
 ### Lints and fixes files
 ```
 npm run lint
