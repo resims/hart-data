@@ -408,7 +408,7 @@ export default {
         this.propertybldgcls = property.bldg_cls_p
         this.propertytaxcls = property.tax_cls_p
         
-        let url='salesforproperty/?bbl_id='+this.propertybbl+'&address='+this.propertyadd+'&apt='+this.propertyapt
+        let url='salesforproperty/?search_bbl_id='+this.propertybbl+'&search_addr='+this.propertyadd+'&search_apt='+this.propertyapt
         this.get(encodeURI(url)).then(response => {
             console.log(response)
             this.sales= response.data.results
